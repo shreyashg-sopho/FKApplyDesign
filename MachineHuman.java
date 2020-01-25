@@ -24,6 +24,9 @@ public class MachineHuman {
     PC.sign = "P";
     PC.make_move(game.current(),PC.sign);
     game.status();
+
+
+
     
 
   } 
@@ -123,6 +126,8 @@ void make_move(String [][] board_array, String sign)
 }
 }
 
+
+ 
 
 
 

@@ -20,6 +20,7 @@ The final class is an errornous file. Please ignore it.
 The final_for_saturday file implements the comple paying with all the conditions and rules of the game along with it declares the winner.
 
 
-IMPROVEMENTS FOR FUTURE :
+# IMPROVEMENTS FOR FUTURE :
 The code currently does not generate an error when the Use tries to make a Cross on a spot which was not initially blank.
 Some redundancy can be improved to optimize time wise.
+

@@ -348,27 +348,32 @@ class hex_manager implements manage_game{
 
 
     	//diagonal1
-    	curr_streak = 0;
+    	curr_streak = 1;
     	int temp_row;
     	int temp_column;
     	int minimum = Math.min(row,column);
-    	temp_row = row - minimum;
-    	temp_column = column - minimum;
-    	while(temp_row < fresh.row_max && temp_column < fresh.column_max)
+    	System.out.println("minimum is" +  minimum);
+    	temp_row = row - minimum + 1;
+    	temp_column = column - minimum + 1;
+    	while (temp_row < fresh.row_max  && temp_column < fresh.column_max )
     	{
-    		if(Board[0][temp_row][temp_column] == first && first != "_")
-    		curr_streak++;
+    		if ((Board[0][temp_row][temp_column] == Board[0][temp_row - 1][temp_column - 1]) && (Board[0][temp_row][temp_column] != "_"))
+    		{
+    			curr_streak++;
+    		}
     		else
     		{
-    			first = Board[0][temp_row][temp_column];
-    			curr_streak = 0;
+    			curr_streak = 1;
     		}
     		if (curr_streak == fresh.win_streak)
-    			return first;
-    		temp_row += 2;
-    		temp_column +=2;
-    		
+    			{
+    				System.out.println("We have a winner and it is the player with sign" + Board[0][temp_row][temp_column] );
+    				return Board[0][temp_row][temp_column];
+    			}
+    		temp_row += 1;
+    		temp_column += 1;
     	}
+	
 
     	return null;
     }
